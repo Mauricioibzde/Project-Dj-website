@@ -44,15 +44,26 @@
                     </li>
                 </ul>
             </div>
+            <div class="menu-mob">
             <div class="menu-mobile">
-                <label class="bar" for="check">
-                    <input type="checkbox" id="check">
-                
-                    <span class="top"></span>
-                    <span class="middle"></span>
-                    <span class="bottom"></span>
-                </label>
+              <label class="bar" for="check">
+                <input type="checkbox" id="check">
+                <span class="top"></span>
+                <span class="middle"></span>
+                <span class="bottom"></span>
+              </label>
             </div>
+            
+            <div class="side-menu" id="sideMenu">
+              
+              <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+            </div>
+          </div>
         </nav>
     </header>
 <section class="Section-01">
@@ -60,23 +71,16 @@
         <div class="box-top">
 <div class="box-01">
     <div class="slides">
-        <img src="./img/abstract-vaporwave-portrait-woman.jpg" alt="Slide 1">
-        <img src="img/beautiful-female-half-length-portrait-isolated-purple-wall-neon-light-young-emotional-teen-girl-sunglasses-human-emotions-facial-expression-concept-trendy-colors-dancing-smiling.jpg" alt="Slide 2">
-        <img src="img/low-angle-man-with-braids-portrait.jpg" alt="Slide 3">
-        <img src="img/indignant-hipster-girl-with-dreadlocks-points-index-finger-wears-black-hat-yellow-jacket-poses-against-colorful-graffiti-wall-spends-free-time-urban-place.jpg" alt="Slide 4">
+        <img src="img/01.jpg" alt="Slide 2">
+        <img src="img/04.jpg" alt="Slide 3">
+        <img src="img/abstract-vaporwave-portrait-woman.jpg" alt="Slide 4">
         <img src="img/man-smiling-handing-vinyl-record.jpg" alt="Slide 4">
         <img src="img/low-angle-shot-person-wearing-gas-mask-black-jacket-ranch-quarantine.jpg" alt="Slide 4">
     </div>
 
     
 </div>
-<div class="box-02">
-    <div class="description">
-        <h1>MORE INFOR BELLOW</h1>
-       
-    </div>
-    
-</div>
+
         </div>
         
        <div class="box-bottom">
@@ -85,17 +89,12 @@
     </div>
         </div> 
         <div class="box-top">
-            <div class="box-01">
-                <video src="./video/6.mp4" autoplay loop muted playsinline>
-        
-                </video>
-            </div>
-            <div class="box-02">
+    
                 <video src="./video/3.mp4" autoplay loop muted playsinline>
         
                 </video>
             </div>
-                    </div>
+                  
     </div>
     <div class="direito">
         <div class="box-direito">
@@ -123,12 +122,6 @@
 
   </div>
   </div>
-                  
-                
-            
-                <div class="boxdireito-img">
-                    
-                </div>
             </div>
        
 
@@ -137,43 +130,41 @@
 
 </section>
 
-<section class="section-02">
-    <div class="section-02-div">
-        <div class="box-section-02">
-           
-        <div class="box-section-02 bg-02">
-            <div class="text">
-                <h1>8</h1>
-            </div></div>
-        <div class="box-section-02 bg-03"><h1>9</h1></div>
-        <div class="box-section-02 bg-04"><h1>10</h1></div>
-
-
-    </div>
-
-</section>
 
 <section class="section-03">
-    <div class="section-03-div">
-  <div class="section-03-border">
     <div class="footer">
         <ul class="footer-liste">
-          <li><a href="https://twitter.com/julesforrest">Twitter</a></li>
-          <li><a href="https://codepen.io/julesforrest">Codepen</a></li>
-          <li><a href="mailto:julesforrest@gmail.com">Email</a></li>
-          <li><a href="https://dribbble.com/julesforrest">Dribbble</a></li>
-          <li><a href="https://github.com/julesforrest">Github</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">Codepen</a></li>
+          <li><a href="#">Email</a></li>
+          <li><a href="#">Dribbble</a></li>
+          <li><a href="#">Github</a></li>
           <li>
-            <p>👋</p>
           </li>
         </ul>
       </div>
-</div>
 
-
-    </div>
+    
 
 </section>
+
+<script>
+  // Seleciona o checkbox e a sidebar
+  const checkBox = document.querySelector('#check');
+  const sideMenu = document.querySelector('.side-menu');
+
+  // Evento para alternar a visibilidade da sidebar quando o checkbox é alterado
+  checkBox.addEventListener('change', function () {
+    if (this.checked) {
+      // Delay de 100ms antes de mostrar a sidebar
+      setTimeout(() => {
+        sideMenu.style.right = '0';  // A sidebar entra da direita
+      }, 100); // 100ms de delay para uma transição mais suave
+    } else {
+      sideMenu.style.right = '-250px';  // A sidebar sai para a direita
+    }
+  });
+</script>
 
 </body>
 </html>
