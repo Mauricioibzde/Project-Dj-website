@@ -54,6 +54,7 @@ header {
     height: 100px;
     padding: 0px 220px ;
     background: linear-gradient(133deg, rgba(2, 0, 36, 0.514) 0%, rgba(121, 9, 119, 0.623) 51%, rgba(10, 10, 10, 0.39) 100%);
+    border-radius: 0px 0px 50px 50px;
  
     
 }
@@ -93,6 +94,11 @@ input[type="checkbox"]:checked ~ .side-menu {
   right: 15px;
 }
 
+.menu-mob{
+
+  display: none;
+}
+
 /**/
 
 
@@ -104,39 +110,74 @@ input[type="checkbox"]:checked ~ .side-menu {
   position: fixed;
   top: 0;
   right: -250px; /* Inicialmente escondida */
-  width: 250px;
-  height: 400px;
-  background-color: #650084cf;
+  width: 450px;
+  height: 450px;
   color: white;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
   overflow: hidden;
-  transition: left 0.3s ease;
-  padding-top: 60px;
-  z-index: 999;
   transition: right 0.5s ease;
-  border-radius: 100px 0px 0px 50px; 
+  padding-top: 120px;
+  z-index: 999;
+
+}
+
+.side-menu::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(./img/only_vinyl.png);
+  background-position: center;
+  background-size: cover;
+  animation: rotateBackground 10s linear infinite;
+  z-index: -1; /* Fica atrás do conteúdo */
 }
 
 .side-menu ul {
+  align-items: center;
   list-style: none;
   padding: 0;
   margin: 0;
+  position: relative; /* Garante que o conteúdo não herda a animação */
+  z-index: 1; /* Fica acima do fundo animado */
+ 
+}
+
+@keyframes rotateBackground {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .side-menu ul li {
   padding: 15px 20px;
+  text-align: end;
+  
+  
 }
 
 .side-menu ul li a {
-  color: white;
+
+  width: 150px;
+  color: rgb(144, 8, 234);
+  background: linear-gradient(133deg, rgb(183, 3, 255) 0%, rgba(121, 9, 119, 0) 20%, rgba(242, 255, 0, 0.957) 0%);
   text-decoration: none;
   font-size: 18px;
   display: block;
   transition: color 0.3s ease;
+  border-radius: 50px;
+  padding-right: 10px;
+
+
 }
 
 .side-menu ul li a:hover {
-  color: #ffc107;
+  color: #000000;
+ 
 }
 
 /* Sidebar visível quando o checkbox está marcado */
@@ -528,7 +569,7 @@ video {
 
 
 .menu-mobile {
-  display: none;
+  
 }
 
 .button {
@@ -863,7 +904,9 @@ img {
   
   /*SECTION FOOTER */
 
-
+  .slides img {
+    height: 400px;
+   }
 
 
 
@@ -876,18 +919,19 @@ display: flex;
     border: solid 2px white;
   }
 
-    .menu-mobile{
+.box-top{
+  height: 200px;
+}
 
-        display: none;
-    }
+
    .slides  {
     width: 100%;
+    
    }
 
-    section {
-    padding: 10px 20px;
-        flex-direction: column;
-    }
+
+
+ 
 
     .courousel {
         display: none;
@@ -901,14 +945,15 @@ display: flex;
 
     .esquerdo{
         width: 100%;
-        height: 100%;
+     
+        
         
     }
 
     .box-bottom {
         padding: 10px 0px;
         width: 100%;
-        height: 80vh;
+
     }
 
     .description .text {
@@ -918,8 +963,7 @@ display: flex;
     
     .direito {
         width: 100%;
-        height: 100%;
-        background-color: #4d4d4d;
+       
     }
 
     .direito .box-direito .item-box-direito {
@@ -932,7 +976,7 @@ display: flex;
     }
 
     .box-bottom {
-        height: 100vh;
+       
     }
 
     .description .text {
@@ -945,16 +989,24 @@ display: flex;
         max-width: 90%;
     }
     .esquerdo {
-        border-radius: 0px;
+      border-radius: 50px 50px 0px 0px;
     }
 
  
   }
 
   @media (max-width: 1000px) {
+    .menu-mob{
 
-    
-
+      display: block;
+    }
+    .box-top {
+     border-radius: 0px 0px 50px 50px;
+  }
+    section {
+      padding: 10px 20px;
+          flex-direction: column;
+      }
 
 
     .section-02 .section-02-div  {
@@ -965,9 +1017,9 @@ display: flex;
 
   @media (max-width: 1250px) {
 
-    .menu-mobile {
-       display: block;
-    }
+  .menu {
+
+  }
 
     header  {
         padding: 0px 10px;
@@ -1017,7 +1069,7 @@ display: flex;
    
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: 1100px) {
 
     .section-03 {
      
