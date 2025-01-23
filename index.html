@@ -55,20 +55,22 @@
             </div>
             
             <div class="side-menu" id="sideMenu">
-              
-              <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-              </ul>
+              <div class="teste-menu">
+                <ul>
+                  <li><a href="#home">Home</a></li>
+                  <li><a href="#about">About</a></li>
+                  <li><a href="#services">Services</a></li>
+                  <li><a href="#contact">Contact</a></li>
+                </ul>
+              </div>
+          
             </div>
           </div>
         </nav>
     </header>
 <section class="Section-01">
     <div class="esquerdo">
-        <div class="box-top">
+        <div class="box">
 <div class="box-01">
     <div class="slides">
         <img src="img/01.jpg" alt="Slide 2">
@@ -150,20 +152,22 @@
 
 <script>
   // Seleciona o checkbox e a sidebar
-  const checkBox = document.querySelector('#check');
-  const sideMenu = document.querySelector('.side-menu');
+const checkBox = document.querySelector('#check');
+const sideMenu = document.querySelector('.side-menu');
 
-  // Evento para alternar a visibilidade da sidebar quando o checkbox é alterado
-  checkBox.addEventListener('change', function () {
-    if (this.checked) {
-      // Delay de 100ms antes de mostrar a sidebar
-      setTimeout(() => {
-        sideMenu.style.right = '0';  // A sidebar entra da direita
-      }, 100); // 100ms de delay para uma transição mais suave
-    } else {
-      sideMenu.style.right = '-250px';  // A sidebar sai para a direita
-    }
-  });
+// Evento para alternar a visibilidade da sidebar quando o checkbox é alterado
+checkBox.addEventListener('change', function () {
+  if (this.checked) {
+    // Delay de 100ms antes de mostrar a sidebar
+    setTimeout(() => {
+      sideMenu.style.right = '-200px'; // Define a posição final da sidebar
+    }, 100); // 100ms de delay para uma transição mais suave
+  } else {
+    // Esconde a sidebar voltando à posição inicial
+    sideMenu.style.right = '-500px'; // Consistente com o CSS inicial
+  }
+});
+
 </script>
 
 </body>
